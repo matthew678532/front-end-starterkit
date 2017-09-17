@@ -1,0 +1,22 @@
+//- 
+	The layout.pug file will be used as the base of all pages,
+	focusing solely on the structure of the pages. Each of your defined 
+	pages will extend the blocks available within this layout file, so 
+	that your site has a consistent theme!
+	
+	Make sure you change this layout file to suit the overarching semantics of your site, for example you may not require your own js file to be loaded on every page of your site, therefore you could either remove the script tag from here and append it only within the pages that require it!
+	
+	And don't worry comments defined like //- will not be compiled when running gulp!
+
+doctype html
+html(lang='en')
+	head
+		title #{title}
+		meta(charset='UTF-8')
+		meta(name='viewport', content='width=device-width, initial-scale=1')
+		block styles
+			link(href='./assets/css/main.min.css', rel='stylesheet')
+	body
+		block content
+		block scripts
+			script(src='./assets/js/main.min.js')
