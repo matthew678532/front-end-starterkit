@@ -4,4 +4,127 @@
 	I have included a sample base stylesheet using the font we selected in the _fonts.scss file, and specified some other styles I like to use within my projects as a starting point! By each style i've included a brief comment explaining its purpose and added some suggestions towards better values that are dependant on the type of project.
 */
 
+/* ================ Body ================ */
+
+/*
+	By setting the body styles to have a font-size of 16px we can use this as our base for rem units, such that 1rem = 16px. Through doing this if we wanted our whole site to have a larger font-size, we'd simply change the 16px to something larger, then all other sizes would follow suit!
+*/
+
+body
+	font-size: 16px
+	line-height: 1
+	font-family: $roboto
+	color: $font-color
+	max-width: 100%
+	position: relative
+	-webkit-text-size-adjust: 100%
+
+/* ================ Selections ================ */
+
+/*
+	The properties below handle selections, from selecting a link on a mobile/tablet device (-webkit-tap-highlight-color) to selecting images and text content (::seletion/img::selection). I recommend using the highlight color, as this by nature will stand out from the other elements.
+*/
+
+body
+	-webkit-tap-highlight-color: transparentize($highlight, 0.8)
+
+::selection, img::selection
+  background: transparentize($highlight, 0.8)
+
+/* ================ Forms ================ */
+
+/*
+	Forms can be very complex, and usually require a great deal of theming. Therefore, it is likely that you will want to add specific styles here.
+
+	These styling properties are only applied to form elements which are inside the <form></form> tag, so be sure to include this in your pug files when defining forms!
+*/
+
+form
+
+	textarea
+		resize: vertical
+
+	input, textarea, select
+		outline: none
+		border: none
+
+		&:focus
+			outline: none
+
+/* ================ Buttons ================ */
+
+button
+	border: none
+
+	&:focus
+		outline: none
+
+/* ================ List/Anchor ================ */
+
+ul
+  padding: 0
+  margin: 0
+
+li
+  list-style-type: none
+
+// Be sure to change anchor styles to match your projects color palette!
+
+a
+	outline: none
+	text-decoration: none
+
+	&:hover
+		background-color: $highlight
+
+/* ================ Line Breaks ================ */
+
+hr
+	height: 1px
+	border: none
+	border-bottom: 1px solid $silver
+	margin: 20px 0
+
 /* ================ Typography ================ */
+
+.huge, .large, h1, h2, h3, h4, h5, h6, p
+	color: $font-color
+	margin: 0
+	font-weight: normal
+	font-family: $roboto
+
+.huge, .large
+	font-family: $open-sans
+	font-weight: bold
+	color: $highlight
+
+.huge
+	font-size: 10rem
+	line-height: 1.20
+
+.large
+	font-size: 5rem
+	line-height: 1.15
+
+h1
+	font-size: 2.5rem
+	line-height: 1.10
+
+h2
+	font-size: 2rem
+	line-height: 1.05
+
+h3
+	font-size: 1.8rem
+
+h4
+	font-size: 1.6rem
+
+h5
+	font-size: 1.4rem
+
+h6
+	font-size: 1.2rem
+
+p
+	line-height: 1.6
