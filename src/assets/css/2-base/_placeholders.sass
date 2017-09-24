@@ -1,0 +1,67 @@
+/*
+	This file will include our placeholders. Placeholders are very similar to mixins in that we can specify multiple css property values that can be reused throughout our stylesheet. However, unlike mixins, placeholders don't accept arguments, and are called via the @extend keyword rather than the +/@include (sidenote: @include is the same as + when using the sass syntax style, however @extend doesn't have an abbreviated version as of yet 😞).
+
+	Another factor which differs between placeholders and mixins is how they are compiled. If the @extend keyword is used across multiple styles, they are grouped in the output, for example:
+
+		.class-one
+			@extend %something
+
+		.class-two
+			@extend %something
+
+	They will be compiled as:
+
+		.class-one, .class-two {
+			//Properties and values defined in %something.
+		}
+
+	Whereas mixins are compiled individually. For example:
+
+		.class-one
+			@include something
+
+		.class-two
+			@include something
+
+	Would be compiled as:
+
+		.class-one {
+			//Properties and values defined in something
+		}
+
+		.class-two {
+			//Properties and values defined in something
+		}
+
+	In our project we could make extensive use of flexbox to perfectly center elements living inside containers. To simplify this process, why not create a placeholder, like so:
+
+		%perfect-center
+			display: flex
+			justify-content: center
+			align-items: center
+
+	Then call this in our containing elements:
+
+		.container
+			@extend %perfect-center
+			//Some other properties here!
+
+			.some-item
+				//Some properties here!
+
+	If you're still unsure of which structure to use (placeholder/mixin) when defining a set of reusable styles, ask yourself the following questions:
+
+	1) Do you require use of parameters?
+	2) Do you care greatly about the size of your stylesheet?
+
+	If you answered yes to 1, use mixins.
+
+	If you answered no to 1, and don't care about the size of your stylesheet, you could use either mixins or placeholders.
+
+	If you answered no to 1, and do care about the size of your stylesheet (you might have a huge project which requires loads of css styles), then use placeholders!
+*/
+
+%perfect-center
+	display: flex
+	justify-content: center
+	align-items: center

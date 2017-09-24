@@ -1,5 +1,5 @@
 /*
-	This file is used to define our projects base styles. This refers to any reset styles that are specific to this project such as typography presets (applying our font choices to headings and paragraphs, as well as specifying sizes etc), body styling, applying padding/margin to specific elements etc.
+	This file is used to define our projects base styles. This refers to any reset styles that you want to apply to this project such as typography presets (applying our font choices to headings and paragraphs, as well as specifying sizes etc), body styling, removing unwanted browser styles etc.
 
 	I have included a sample base stylesheet using the font we selected in the _fonts.scss file, and specified some other styles I like to use within my projects as a starting point! By each style i've included a brief comment explaining its purpose and added some suggestions towards better values that are dependant on the type of project.
 */
@@ -7,7 +7,7 @@
 /* ================ Body ================ */
 
 /*
-	By setting the body styles to have a font-size of 16px we can use this as our base for rem units, such that 1rem = 16px. Through doing this if we wanted our whole site to have a larger font-size, we'd simply change the 16px to something larger, then all other sizes would follow suit!
+	By setting the body styles to have a font-size of 16px we can use this as our base for rem units, such that 1rem = 16px. Through doing this if we wanted our whole site to have a larger font-size, we'd simply change the 16px to something larger, then all other specified sizes would follow suit!
 */
 
 body
@@ -17,12 +17,11 @@ body
 	color: $font-color
 	max-width: 100%
 	position: relative
-	-webkit-text-size-adjust: 100%
 
 /* ================ Selections ================ */
 
 /*
-	The properties below handle selections, from selecting a link on a mobile/tablet device (-webkit-tap-highlight-color) to selecting images and text content (::seletion/img::selection). I recommend using the highlight color, as this by nature will stand out from the other elements.
+	The properties below handle selections, from selecting a link on a mobile/tablet device (-webkit-tap-highlight-color) to selecting images and text content (::seletion/img::selection). I recommend using the highlight color, as this by nature will stand out from the other elements on the page. But if you want to use a different color you can change $highlight to be something else!
 */
 
 body
@@ -34,22 +33,18 @@ body
 /* ================ Forms ================ */
 
 /*
-	Forms can be very complex, and usually require a great deal of theming. Therefore, it is likely that you will want to add specific styles here.
-
-	These styling properties are only applied to form elements which are inside the <form></form> tag, so be sure to include this in your pug files when defining forms!
+	Forms can be very complex, and usually require a great deal of theming. Therefore, it is likely that you will want to add specific styles here, maybe all forms in your website are centered inside the parent container? You could add this here!
 */
 
-form
+textarea
+	resize: vertical
 
-	textarea
-		resize: vertical
+input, textarea, select
+	outline: none
+	border: none
 
-	input, textarea, select
+	&:focus
 		outline: none
-		border: none
-
-		&:focus
-			outline: none
 
 /* ================ Buttons ================ */
 
@@ -68,7 +63,7 @@ ul
 li
   list-style-type: none
 
-// Be sure to change anchor styles to match your projects color palette!
+// Be sure to change anchor styles to match your projects color palette! Here I have included only hover states, but there are plenty of other states to consider, like :visited, :active or :focused.
 
 a
 	outline: none
@@ -88,10 +83,7 @@ hr
 /* ================ Typography ================ */
 
 .huge, .large, h1, h2, h3, h4, h5, h6, p
-	color: $font-color
 	margin: 0
-	font-weight: normal
-	font-family: $roboto
 
 .huge, .large
 	font-family: $open-sans
@@ -105,6 +97,11 @@ hr
 .large
 	font-size: 5rem
 	line-height: 1.15
+
+h1, h2, h3, h4, h5, h6, p
+	font-family: $roboto
+	font-weight: normal
+	color: $font-color
 
 h1
 	font-size: 2.5rem
