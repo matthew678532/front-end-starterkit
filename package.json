@@ -1,0 +1,27 @@
+{
+  "name": "front-end-starterkit",
+  "version": "1.0.0",
+  "description": "A starter kit to help you get your next client-side project off the ground!",
+  "main": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matthew678532/front-end-starterkit.git"
+  },
+  "keywords": [
+    "Starterkit",
+    "Pug",
+    "Sass",
+    "Js",
+    "Gulp",
+    "Node"
+  ],
+  "author": "Matthew Birch",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/matthew678532/front-end-starterkit/issues"
+  },
+  "homepage": "https://github.com/matthew678532/front-end-starterkit#readme"
+}
