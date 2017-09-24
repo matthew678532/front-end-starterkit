@@ -1,14 +1,12 @@
 /*
 	This file is used to define our projects base styles. This refers to any reset styles that you want to apply to this project such as typography presets (applying our font choices to headings and paragraphs, as well as specifying sizes etc), body styling, removing unwanted browser styles etc.
 
-	I have included a sample base stylesheet using the font we selected in the _fonts.scss file, and specified some other styles I like to use within my projects as a starting point! By each style i've included a brief comment explaining its purpose and added some suggestions towards better values that are dependant on the type of project.
-*/
+	I have included a sample base stylesheet using the font we selected in the _fonts.scss file, and specified some other styles I like to use within my projects as a starting point! By each style i've included a brief comment explaining its purpose and added some suggestions towards better values that are dependant on the type of project. */
 
 /* ================ Body ================ */
 
 /*
-	By setting the body styles to have a font-size of 16px we can use this as our base for rem units, such that 1rem = 16px. Through doing this if we wanted our whole site to have a larger font-size, we'd simply change the 16px to something larger, then all other specified sizes would follow suit!
-*/
+	By setting the body styles to have a font-size of 16px we can use this as our base for rem units, such that 1rem = 16px. Through doing this if we wanted our whole site to have a larger font-size, we'd simply change the 16px to something larger, then all other specified sizes would follow suit! */
 
 body
 	font-size: 16px
@@ -21,8 +19,7 @@ body
 /* ================ Selections ================ */
 
 /*
-	The properties below handle selections, from selecting a link on a mobile/tablet device (-webkit-tap-highlight-color) to selecting images and text content (::seletion/img::selection). I recommend using the highlight color, as this by nature will stand out from the other elements on the page. But if you want to use a different color you can change $highlight to be something else!
-*/
+	The properties below handle selections, from selecting a link on a mobile/tablet device (-webkit-tap-highlight-color) to selecting images and text content (::seletion/img::selection). I recommend using the highlight color, as this by nature will stand out from the other elements on the page. But if you want to use a different color you can change $highlight to be something else! */
 
 body
 	-webkit-tap-highlight-color: transparentize($highlight, 0.8)
@@ -33,8 +30,7 @@ body
 /* ================ Forms ================ */
 
 /*
-	Forms can be very complex, and usually require a great deal of theming. Therefore, it is likely that you will want to add specific styles here, maybe all forms in your website are centered inside the parent container? You could add this here!
-*/
+	Forms can be very complex, and usually require a great deal of theming. Therefore, it is likely that you will want to add specific styles here, maybe all forms in your website are centered inside the parent container? You could add this here! */
 
 textarea
 	resize: vertical
