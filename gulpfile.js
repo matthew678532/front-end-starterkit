@@ -9,6 +9,8 @@
 'use strict'
 
 // Here we pull in all of the gulp plugins, and packages we require!
+// To learn more about any of the packages used, visit:
+// https://www.npmjs.com/, and simply search for the package by name.
 const gulp = require('gulp'),
 			sass = require('gulp-sass'),
 			pug = require('gulp-pug'),
@@ -24,7 +26,7 @@ const gulp = require('gulp'),
 			pump = require('pump'),
 			browsersync = require('browser-sync').create(),
 			runsequence = require('run-sequence'),
-			config = require('./config.js').options
+			opts = require('./config.js').options
 
 /**
  * Task: pug
@@ -37,9 +39,9 @@ const gulp = require('gulp'),
  */
 gulp.task('pug', function(cb) {
 	pump([
-		gulp.src(['src/pug/*.pug', '!src/pug/layout.pug']),
+		gulp.src([`${opts.src.pug}/*.pug`, `!${opts.src.pug}/layout.pug`]),
 		pug(),
-		gulp.dest('dist'),
+		gulp.dest(opts.dist.base),
 		browsersync.stream()
 	], cb)
 })
@@ -60,12 +62,12 @@ gulp.task('pug', function(cb) {
  */
 gulp.task('sass', function(cb) {
 	pump([
-		gulp.src('src/assets/css/main.sass'),
+		gulp.src(`${opts.src.sass}/main.sass`),
 		sass(),
 		prefix(),
-		rename({suffix: '.min'}),
+		rename(opts.suffix),
 		cssnano(),
-		gulp.dest('dist/assets/css'),
+		gulp.dest(opts.dist.sass),
 		browsersync.stream()
 	], cb)
 })
@@ -84,11 +86,11 @@ gulp.task('sass', function(cb) {
  */
 gulp.task('js', function(cb) {
 	pump([
-		gulp.src(['node_modules/jquery/dist/jquery.min.js', 'src/assets/js/modules/*.js', 'src/assets/js/main.js']),
+		gulp.src(['node_modules/jquery/dist/jquery.min.js', `${opts.src.js}/modules/*.js`, `${opts.src.js}/main.js`]),
 		concat('main.js'),
-		rename({suffix: '.min'}),
+		rename(opts.suffix),
 		uglify(),
-		gulp.dest('dist/assets/js'),
+		gulp.dest(opts.dist.js),
 		browsersync.stream()
 	], cb)
 })
@@ -103,13 +105,13 @@ gulp.task('js', function(cb) {
  */
 gulp.task('image', function(cb) {
 	pump([
-		gulp.src('src/assets/img/**/*'),
+		gulp.src(`${opts.src.img}/**/*`),
 		cache(imagemin({
 			optimizationLevel: 5,
 			progressive: true,
 			interlaced: true
 		})),
-		gulp.dest('dist/assets/img'),
+		gulp.dest(opts.dist.img),
 		browsersync.stream()
 	], cb)
 })
@@ -124,7 +126,7 @@ gulp.task('image', function(cb) {
 gulp.task('browsersync', function() {
 	browsersync.init({
 		server: {
-			baseDir: 'dist'
+			baseDir: opts.dist.base
 		},
 		port: 8080
 	})
@@ -153,7 +155,7 @@ gulp.task('build', function(cb) {
  * the dist/ folder.
  */
 gulp.task('clean', function() {
-	return del(['dist/assets', 'dist/*.html'])
+	return del([`${opts.dist.base}/**/*`])
 })
 
 /**
@@ -164,9 +166,9 @@ gulp.task('clean', function() {
  * and the reload the browser with the latest code.
  */
 gulp.task('watch', function() {
-	gulp.watch('src/pug/**/*.pug', ['pug'])
-	gulp.watch('src/assets/css/**/*.sass', ['styles'])
-	gulp.watch('src/assets/js/**/*.js', ['js'])
+	gulp.watch(`${opts.src.pug}/**/*.pug`, ['pug'])
+	gulp.watch(`${opts.src.sass}/**/*.sass`, ['styles'])
+	gulp.watch(`${opts.src.js}/**/*.js`, ['js'])
 })
 
 /**
