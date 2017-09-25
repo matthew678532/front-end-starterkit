@@ -7,24 +7,30 @@ extends layout.pug
 	Here we could use block append styles and include another css file which has styles that are specifically defined for the index page, although this isn't likely.
 
 block content
-	
-	//- 
-		Here we have defined some content to fill out the content block on the layout.pug page. For reusable components you can create a module inside the /modules directory which can be included inside block content as so. Otherwise for content that is specifically for this page, simply hardcode it!
-	
-	include modules/header.pug
-	.container
-		p 
-			| A starter kit to help you get your next client-side project 
-			| off the ground!
-		p 
-			| I hope you find this starterkit useful to your developmental 
-			| process within this project, and projects to come! If you 
-			| have any queries feel free to submit a pull request with 
-			| changes for me to review, otherwise email me via 
-			a(href='mailto:matthew678532@gmail.com', target='_blank')
-			|  and i'll get back to you asap :)
-		img(src='./assets/img/starterkit-logo.png')
+	.page-container
+		.box
+			.overlay
 		
+				//- 
+					Here we have defined some content to fill out the content block on the layout.pug page. For reusable components you can create a module inside the /modules directory which can be included inside block content as so. Otherwise for content that is specifically for this page, simply hardcode it!
+		
+				include modules/header.pug
+				.page-content
+					h2 
+						| A starter kit to help you get your next client-side project 
+						| off the ground!
+					br
+					p 
+						| I hope you find this starterkit of use to you 
+						| when developing front-end applications! 
+						| If you have any queries, feel free to submit a pull
+						| request with changes for me to review. Alternatively,
+						| click the button below to send me an email, and i'll
+						| get back to you asap :).
+					br
+					.email-btn-container
+						button.btn Email
+			
 	
 //- 
 	A good example for appending scripts which is more likely, is the use of google maps services when implementing a map on your website. It is likely that an interactive google map will only be implemented on a single page, such as a contact us page, therefore you could do something like this:

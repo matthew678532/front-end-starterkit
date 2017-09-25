@@ -167,7 +167,7 @@ gulp.task('clean', function() {
  */
 gulp.task('watch', function() {
 	gulp.watch(`${opts.src.pug}/**/*.pug`, ['pug'])
-	gulp.watch(`${opts.src.sass}/**/*.sass`, ['styles'])
+	gulp.watch(`${opts.src.sass}/**/*.sass`, ['sass'])
 	gulp.watch(`${opts.src.js}/**/*.js`, ['js'])
 })
 
