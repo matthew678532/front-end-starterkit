@@ -16,6 +16,21 @@ body
 	max-width: 100%
 	position: relative
 
+/* ================ Box Sizing ================ */
+
+/*
+	Box-sizing allows us to take into account padding and margins when
+	specifying a height and width of a div, this means that instead of
+	increasing the size of the div (essentially adding padding and margin to the width and height of the element), these values are
+	account for whilst maintaining the specified size of the element! */
+
+*
+  box-sizing: border-box
+
+*::before,
+*::after
+  box-sizing: border-box
+
 /* ================ Selections ================ */
 
 /*

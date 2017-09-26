@@ -4,5 +4,20 @@
 	I have included some simple modules to help you get an idea of the sorts of styles you may find wrapped up within a module, enjoy! */
 
 #page-header
-	text-align: center
+	text-align: left
 	padding: 2rem
+
+	.large
+		font-size: 3rem
+
+@media screen and ($tablet-portrait)
+	#page-header
+		text-align: center
+
+		.large
+			font-size: 4rem
+
+@media screen and ($desktop)
+	#page-header
+		.large
+			font-size: 5rem

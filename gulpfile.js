@@ -65,6 +65,7 @@ gulp.task('sass', function(cb) {
 		gulp.src(`${opts.src.sass}/main.sass`),
 		sass(),
 		prefix(),
+		gulp.dest(opts.dist.sass),
 		rename(opts.suffix),
 		cssnano(),
 		gulp.dest(opts.dist.sass),

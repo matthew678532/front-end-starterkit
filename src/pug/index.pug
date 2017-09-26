@@ -7,6 +7,10 @@ extends layout.pug
 	Here we could use block append styles and include another css file which has styles that are specifically defined for the index page, although this isn't likely.
 
 block content
+	span(class='plane one fa fa-paper-plane fa-5x')
+	span(class='plane two fa fa-paper-plane fa-5x')
+	span(class='plane three fa fa-paper-plane fa-5x')
+
 	.page-container
 		.box
 			.overlay
@@ -20,7 +24,7 @@ block content
 						| A starter kit to help you get your next client-side project 
 						| off the ground!
 					br
-					p 
+					p
 						| I hope you find this starterkit of use to you 
 						| when developing front-end applications! 
 						| If you have any queries, feel free to submit a pull
@@ -29,7 +33,7 @@ block content
 						| get back to you asap :).
 					br
 					.email-btn-container
-						button.btn Email
+						a.btn(href='mailto:matthew678532@gmail.com', target='_top') Email
 			
 	
 //- 

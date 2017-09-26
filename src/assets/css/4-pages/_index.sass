@@ -1,14 +1,40 @@
 /*
 	Our pages files will include content that is specifically developed for a single page of our website. For example: if you had a contact page the likelyhood is you'd need a contact form. However, this contact form isn't really a module, unless we were to use it across multiple pages. Therefore, the form would be page specific and the styles would be found within a file named _contact.sass (more than likely). */
 
+.plane
+	position: absolute
+	color: #F5F5F5
+
+.one
+	top: 10%
+	right: 10%
+	bottom: auto
+	left: auto
+	transform: rotateX(40deg)
+
+.two
+	top: auto
+	right: auto
+	bottom: 40%
+	left: 10%
+	transform: rotateY(180deg)
+
+.three
+	top: auto
+	right: 30%
+	bottom: -5%
+	left: auto
+	transform: rotateY(330deg)
+
 .page-container
-	height: 100vh
+	height: 100%
 	@extend %perfect-center
 
 	.box
 		+background-image($starterkit-image, no-repeat, center, auto)
-		width: 40%
+		width: 90%
 		box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23)
+		z-index: 1
 
 		.overlay
 			background-color: transparentize($highlight, 0.1)
@@ -18,5 +44,25 @@
 		.page-content
 			padding: 0 2rem 2rem 2rem
 
+			h2
+				font-size: 1.5rem
+
 		.email-btn-container
 			text-align: center
+
+@media screen and ($tablet-portrait)
+	html, body
+		width: auto
+		height: 100%
+		overflow: hidden
+
+	.page-container > .box
+		width: 60%
+
+@media screen and ($desktop)
+	.page-container
+		.box
+			width: 40%
+
+			.page-content > h2
+				font-size: 2rem
