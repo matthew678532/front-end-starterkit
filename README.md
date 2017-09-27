@@ -75,7 +75,63 @@ To run tasks and watchers together, simply run `gulp` with no parameters. This w
 
 ## Folder Structure
 
-// Todo
+The folder structure used is fairly simple to get to grips with, and consists of two key directories, notably `src/` and `dist/`. The `src/` directory is of most importance however, and is where you will be writing your code. As you write your code you should run gulp in the background, this will automatically compile your source code into distribution code upon save, and thus populate your `dist/` folder with optimized code.
+
+I have left a small description by each folder/file to describe its purpose for your reference, enjoy!
+
+``` javascript
+
+front-end-starterkit = {
+	dist/: `Contains optimized files (don't edit this!)`,
+	node_modules/: `Stores project dependencies`,
+	src/: [`Contains source code/assets (get to work here!)`, {
+		assets/: [`Contains assets (css, img, js)`, {
+			css/: [`Contains sass files`, {
+				1-tools/: [`Contains external resources for sass development`, {
+					bourbon/: 'A 3rd party mixin library',
+					_fonts.scss: 'Sass file to import fonts from services',
+					_normalize.scss: 'CSS Reset file to normalize css behaviour across browsers'
+				}],
+				2-base/: [`Contains base styles for your project`, {
+					_base.sass: 'Contains base styles, barebone element styles and resets',
+					_mixins.sass: 'Contains functions to dry up sass code',
+					_placeholders.sass: 'Contains placeholders for regular chunks of sass code',
+					_variables.sass: 'Contains static variables for reusable code'
+				}],
+				3-modules/: [`Folder to store sass modules`, {
+					_buttons.sass: 'Contains all code used to styles button elements',
+					_header.sass: 'Contains all code used to style the header'
+				}],
+				4-pages/: [`Folder to store page specific styles`, {
+					_index.sass: 'Contains styles created specifically for the index page'
+				}]
+			}],
+			img/: [`Folder to store img assets used in the website`, {
+				starterkit-logo.png: 'Sample image of the starterkit logo'
+			}],
+			js/: [`Folder to store javascript files`, {
+				modules/: [`Folder to store javascript modules`, {
+					example.js: 'An example javascript module'
+				}],
+				main.js: 'The calling file, where module methods/properties are invoked'
+			}]
+		}],
+		pug/: [`Folder to store all pug files`, {
+			modules/: [`Folder to store pug modules`, {
+				header.pug: 'An example pug module to store header markup'
+			}],
+			index.pug: 'Contains markup used to define the index page',
+			layout.pug: 'Contains the usual semantics required to create a html file'
+		}]
+	}],
+	.gitignore: 'A file which includes folders/files to ignore when pushing to github',
+	config.js: 'Contains configuration options such as folder structure data',
+	gulpfile.js: 'Contains gulp tasks and watchers for automating development tasks',
+	package.json: 'Project package for managing dependencies, and documenting your project',
+	README.md: 'Project readme file, used to document your project'
+}
+
+```
 
 ## Authors
 
