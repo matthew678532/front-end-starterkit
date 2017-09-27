@@ -1,16 +1,16 @@
 /*
-	This is our variables file! In sass we can use variables to store styles then reference them in other sass files by name. For example, we could create a variable in this file like:
+	This is your projects variables file! In sass you can use variables to store styles, and then reference them in other sass files by name. For example, you might define a variable in this file like so:
 
 		$font-color: #263238
 
-	Then inside our base file (or any file for that matter), we can reference the font color variable: $font-color, rather than the hex value #263238, like so:
+	Then inside the 2-base/_base.sass file (or any other sass file for that matter), you can reference the font color variable: $font-color, rather than the hex value #263238, like so:
 
 		h1
 			color: $font-color
 
-	By doing this we can make our style sheets easier to maintain and modify in the future. For example, if we decided to change the $font-color variable to black we would change the hex value to be #000. Then every time the $font-color variable is referenced within other files the color would change to reflect this variable, saving us time manually changing the font color across all dom elements. Pretty neat huh!
+	By doing this your style sheets become easier to maintain and modify in the future. For example, if you decided to change the $font-color variable to black, you would change the hex value of the $font-color variable to #000. Then every time the $font-color variable is referenced within other files the color would change to reflect this variable, saving you time manually changing the font color across all files and elements. Pretty neat huh!
 
-	This is also not just restricted to colors, we can store all kinds of things like media queries! For example:
+	This is not just restricted to colors, you are free to store all kinds of things like media queries widths! For example:
 
 		$tablet: 'max-width: 992px'
 
@@ -55,7 +55,7 @@ $black: #000
 /* ================ Images =============== */
 
 /*
-	An important thing to note about relative links is that all assets are relative from the main.css file within the dist directory. By doing ../../ we jump back two directorys and are located within the dist directory, we then specify assets to step into the assets directory. By joining the $base variable with the $img variable we are then located inside the assets/img directory of the dist folder where we can easily specify the image we want! */
+	An important thing to note about relative links is that all assets are relative from the main.css file within the dist directory. By doing ../../ you will jump back two directorys and are now located within the dist directory, you then specify assets to step into the assets directory. By joining the $base variable with the $img variable you are then located inside the assets/img directory of the dist folder, where you can easily specify the image you want! */
 
 $base: '../../assets'
 $img: '/img'
@@ -65,9 +65,9 @@ $starterkit-image: '#{$base}#{$img}/starterkit-logo.png'
 /* ================ Breakpoints =============== */
 
 /*
-	Another useful collection of variables is specifying standard breakpoint numbers for responsiveness! But please, do not restrict yourself to these values, be sure to create new breakpoints as you develop. This ensure that all elements look great irrespective of the viewport!
+	Another useful collection of variables is specifying standard breakpoint numbers for responsiveness! But please, do not restrict yourself to these values, be sure to create new breakpoints as you develop. This ensuring all elements look great, irrespective of the viewport!
 
-	Another point to add is whether you choose a mobile-first or desktop-first approach. If you approach your project designing for mobile, then you only need to include tablet and above breakpoints, and if you design desktop first then you need to include tablet and below breakpoints. */
+	Another point to add is whether you choose a mobile-first or desktop-first approach. If you approach your project designing for mobile viewports, then you need to think about scaling outwards (for tablets, desktops etc), otherwise you need to think inversely (for tablets, mobiles etc). The media breakpoints specified below cater for mobile-first developmental approaches, but you can change the values of $phone-only, $tablet-portrait, $tablet-landscape and $desktop to use max-width for desktop-first approaches. */
 
 $phone-only: 'max-width: 599px'
 $tablet-portrait: 'min-width: 600px'

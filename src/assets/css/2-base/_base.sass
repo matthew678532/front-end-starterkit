@@ -1,28 +1,32 @@
 /*
-	This file is used to define our projects base styles. This refers to any reset styles that you want to apply to this project such as typography presets (applying our font choices to headings and paragraphs, as well as specifying sizes etc), body styling, removing unwanted browser styles etc.
+	This file is used to define your projects base styles. This refers to any reset and base styles that you wish to apply to this project, for example:
 
-	I have included a sample base stylesheet using the font we selected in the _fonts.scss file, and specified some other styles I like to use within my projects as a starting point! By each style i've included a brief comment explaining its purpose and added some suggestions towards better values that are dependant on the type of project. */
+	- Element styling (Typographic sizing and font types, etc.)
+	- Unwanted browser styles (Removing ul margins, etc.)
+
+	These are the main types of styles that you should be implementing within this file, and focusing predominantly towards low specificity things like tag names (i.e button or ul).
+
+	I have included a sample base stylesheet using the font found within the _fonts.scss file, and specified some other styles I like to use within my projects as a starting point! By each style i've included a brief comment explaining its purpose, and added some suggestions towards better values that are dependant on the type of project. */
 
 /* ================ Body ================ */
 
 /*
-	By setting the body styles to have a font-size of 16px we can use this as our base for rem units, such that 1rem = 16px. Through doing this if we wanted our whole site to have a larger font-size, we'd simply change the 16px to something larger, then all other specified sizes would follow suit! */
+	These are the base body styles of your website. Most styles are fairly standard, however there are a few that're fairly important! Firstly, see how variables are referenced which are defined within the 2-base/_variables.sass file, saving typing space and helping you to manage your css files more effectively! Sweet! Secondly the font-size is set to 16px, this is very important as these pixel dimensions are used as the base rem units throughout the project files, such that 1rem = 16px. By doing this you will be able to scale your font-size with ease for larger/smaller viewports. For example, if you change this font size to 24px, every other element that uses rem's for its dimensions will now use 24px as the base, so elements will look enlarged. */
 
-body
+html, body
+	font-family: $roboto
 	font-size: 16px
 	line-height: 1
-	font-family: $roboto
 	color: $font-color
 	max-width: 100%
 	position: relative
+	-webkit-font-smoothing: antialiased !important
 
 /* ================ Box Sizing ================ */
 
 /*
 	Box-sizing allows us to take into account padding and margins when
-	specifying a height and width of a div, this means that instead of
-	increasing the size of the div (essentially adding padding and margin to the width and height of the element), these values are
-	account for whilst maintaining the specified size of the element! */
+	specifying the height and width of an element, this means that instead of increasing the size of the element (essentially adding padding and margin to the width and height of the element), these values are accounted for whilst maintaining the specifying the original height and width of the element! */
 
 *
   box-sizing: border-box
@@ -34,7 +38,7 @@ body
 /* ================ Selections ================ */
 
 /*
-	The properties below handle selections, from selecting a link on a mobile/tablet device (-webkit-tap-highlight-color) to selecting images and text content (::seletion/img::selection). I recommend using the highlight color, as this by nature will stand out from the other elements on the page. But if you want to use a different color you can change $highlight to be something else! */
+	The properties below handle selection of elements, from selecting a link on a mobile/tablet device (-webkit-tap-highlight-color) to selecting images and text content (::seletion/img::selection). I recommend using the highlight color, as this by nature will stand out from the other elements on the page. But if you want to use a different color you can change $highlight to be something else! */
 
 body
 	-webkit-tap-highlight-color: transparentize($highlight, 0.8)
@@ -51,6 +55,7 @@ textarea
 	resize: vertical
 
 input, textarea, select
+	font-family: inherit
 	outline: none
 	border: none
 
@@ -59,29 +64,25 @@ input, textarea, select
 
 /* ================ Buttons ================ */
 
+/*
+	The styles below are all dependant on the design, and therefore interchangable. For example, you may want your list items to be appended with the standard dot. Therefore, you can remove list-style-type: none from the li selector! */
+
 button
+	font-family: inherit
 	border: none
 
 	&:focus
 		outline: none
 
-/* ================ List/Anchor ================ */
+/* ================ List Styles ================ */
 
-ul
+ul, ol
+	list-style: none
   padding: 0
   margin: 0
 
 li
   list-style-type: none
-
-// Be sure to change anchor styles to match your projects color palette! Here I have included only hover states, but there are plenty of other states to consider, like :visited, :active or :focused.
-
-a
-	outline: none
-	text-decoration: none
-
-	&:hover
-		background-color: $highlight
 
 /* ================ Line Breaks ================ */
 
@@ -92,6 +93,9 @@ hr
 	margin: 20px 0
 
 /* ================ Typography ================ */
+
+/*
+	These are the typographic styles, as you can see in this example the open-sans font family is used for extreme titles (.huge/.large), otherwise roboto is preferred. This is just to get you started! You'll need to edit these styles based on your font-preferences, sizes, colors, etc. */
 
 .huge, .large, h1, h2, h3, h4, h5, h6, p
 	color: $font-color
@@ -134,4 +138,4 @@ h6
 	font-size: 1.2rem
 
 p
-	line-height: 1.6
+	line-height: 1.60

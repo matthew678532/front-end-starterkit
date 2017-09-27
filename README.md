@@ -6,7 +6,8 @@ A starter kit to help you get your next client-side project off the ground!
 
 ## Overview
 
-The purpose of this repository is to provide you as a developer with a starting point when embarking upon projects which involve predominantly front end development. Within this repository there are several tools which help aid developmental processes, most notably gulp. Gulp is used to streamline the build process and essentially transform source code into optimized distribution code.
+The purpose of this repository is to provide you as a developer with
+and integrated workflow when embarking upon projects which involve predominantly front end development. Within this repository there are several tools which help aid developmental processes, most notably gulp. Gulp is used to streamline the build process and essentially transform source code into optimized distribution code.
 
 The technologies included within this starterkit are: pug, sass, js/jquery and gulp. For those of you who are unfamiliar with any of the technologies used, but are keen to learn, I have compiled a collection of introductory resources for you:
 
@@ -26,7 +27,7 @@ Once node is installed, open up your terminal and run the following command to i
 
 `npm install -g gulp`
 
-This installation will give you access to gulp's cli for running our automation tasks such as `gulp sass`, to convert sass to css, but more on that later!
+This installation will give you access to gulp's cli for running our automation tasks such as `gulp sass`, which enables you to convert sass code into optimized css code, but more on that later!
 
 ## Installation
 
@@ -40,11 +41,11 @@ For cloning via ssh **(more advanced, but also more secure)**, you need to gener
 
 `git clone git@github.com:matthew678532/front-end-starterkit.git`
 
-Upon completion of any of the options above, you will have access to the source code locally on your machine. Before you start coding, and using the features prepared within the source code you will need to download the packages found within the package.json file. To do this you will need to cd into the project directory and run the following command:
+Upon completion of any of the options above, you will have access to the source code locally on your machine. Before you start coding, and using the features prepared within the source code, you will need to download the packages stored within the package.json file. To do this you will need to cd into the project directory and run the following command:
 
 `npm install`
 
-This will install all of the dependencies required to use the gulp commands, and completes the installation process.
+This will install all of the dependencies required to run the gulp commands, and completes the installation process.
 
 ## Usage
 

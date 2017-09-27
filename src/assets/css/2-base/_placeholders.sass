@@ -1,5 +1,5 @@
 /*
-	This file will include our placeholders. Placeholders are very similar to mixins in that we can specify multiple css property values that can be reused throughout our stylesheet. However, unlike mixins, placeholders don't accept arguments, and are called via the @extend keyword rather than the +/@include (sidenote: @include is the same as + when using the sass syntax style, however @extend doesn't have an abbreviated version as of yet 😞).
+	This file will include your projects placeholders. Placeholders are very similar to mixins in that you can specify multiple css property values that can be reused throughout your stylesheet. However, unlike mixins, placeholders don't accept arguments, and are called via the @extend keyword rather than the +/@include (sidenote: @include is the same as + when using the sass syntax style, however @extend doesn't have an abbreviated version as of yet 😞).
 
 	Another factor which differs between placeholders and mixins is how they are compiled. If the @extend keyword is used across multiple styles, they are grouped in the output, for example:
 
@@ -33,14 +33,14 @@
 			//Properties and values defined in something
 		}
 
-	In our project we could make extensive use of flexbox to perfectly center elements living inside containers. To simplify this process, why not create a placeholder, like so:
+	In your project you could make extensive use of flexbox to perfectly center elements living inside containers. To simplify this process, why not create a placeholder, like so:
 
 		%perfect-center
 			display: flex
 			justify-content: center
 			align-items: center
 
-	Then call this in our containing elements:
+	Then you can reference this in your containing elements:
 
 		.container
 			@extend %perfect-center

@@ -4,7 +4,7 @@
 extends layout.pug
 
 //-
-	Here we could use block append styles and include another css file which has styles that are specifically defined for the index page, although this isn't likely.
+	Here you could use block append styles and include another css file which has styles that are specifically defined to style the index page, although this isn't likely.
 
 block content
 	span(class='plane one fa fa-paper-plane fa-5x')
@@ -16,7 +16,7 @@ block content
 			.overlay
 		
 				//- 
-					Here we have defined some content to fill out the content block on the layout.pug page. For reusable components you can create a module inside the /modules directory which can be included inside block content as so. Otherwise for content that is specifically for this page, simply hardcode it!
+					Here is some content defined to fill out the content block on the layout.pug page. For reusable components you can create a module inside the /modules directory which can be included inside block content as below. Otherwise for content that is specifically for this page, simply hardcode it!
 		
 				include modules/header.pug
 				.page-content

@@ -1,14 +1,16 @@
 /**
- * This is our gulp file! Here we implement a variety of tasks
- * and watchers to help automate common development tasks such as
- * compiling sass to css, and concatenate multiple js files. For full
- * documentation please refer to the usage heading of the readme file
- * at https://github.com/matthew678532/front-end-starterkit/blob/master/README.md
+ * This is the infamous gulp file! Here you can implement a variety
+ * of tasks and watchers to help automate common development tasks.
+ * For example: compiling sass to css, and concatenate multiple js
+ * files. For full documentation please refer to the usage heading of
+ * the readme file at
+ * https://github.com/matthew678532/front-end-starterkit/blob/master/README.md
  */
 
 'use strict'
 
-// Here we pull in all of the gulp plugins, and packages we require!
+// Here you will pull in all of the gulp plugins, and packages
+// you require!
 // To learn more about any of the packages used, visit:
 // https://www.npmjs.com/, and simply search for the package by name.
 const gulp = require('gulp'),

@@ -1,5 +1,5 @@
 /*
-	Our pages files will include content that is specifically developed for a single page of our website. For example: if you had a contact page the likelyhood is you'd need a contact form. However, this contact form isn't really a module, unless we were to use it across multiple pages. Therefore, the form would be page specific and the styles would be found within a file named _contact.sass (more than likely). */
+	Page files will include content that is developed specifically for a single page of your website/web app. For example: if you had a contact page the likelyhood is that you'd need a contact form. However, you may plan to only specify this contact form once throughout your entire site. In this scenario it would be pointless to create a module, as the contact form is page specific. Therefore, you would likely create a file named _contact.sass and store the styles inside the page file. */
 
 .plane
 	position: absolute
@@ -31,6 +31,8 @@
 	@extend %perfect-center
 
 	.box
+		// This demonstrates usage of the mixin created within
+		// 2-base/_mixins.sass.
 		+background-image($starterkit-image, no-repeat, center, auto)
 		width: 90%
 		box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23)
