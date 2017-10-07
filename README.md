@@ -2,7 +2,7 @@
 
 A starter kit to help you get your next client-side project off the ground!
 
-<img src="src/assets/img/starterkit-logo.png" max-width=100%>
+<img src="src/assets/img/starterkit-v1-logo.png" max-width=100%>
 
 ## Overview
 
